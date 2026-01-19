@@ -55,7 +55,7 @@ After you restart the service (sudo systemctl restart fail2ban), run this:
 ```
 sudo fail2ban-client status
 ```
-If you see Number of jail: 1 and Jail list: sshd, then Step 2 was a success!
+If you see Number of jail: 1 and Jail list: sshd, then it was a success!
 
 # Results & Analysis
 The implementation of Fail2Ban successfully mitigated the attack. Unlike the basic UFW limit, Fail2Ban:
@@ -75,11 +75,11 @@ sudo tail -f /var/log/auth.log
 <img width="2560" height="1440" alt="screen shot 6" src="https://github.com/user-attachments/assets/9d1ea9d3-590e-402c-b3f3-ca1d391dddcc" />
 
 # Lessons Learned
-Static vs. Dynamic Security: Static rules (like UFW limit) are easily bypassed by changing the timing of an attack. Dynamic security (Fail2Ban) is necessary to catch persistent threats.
+- Static vs. Dynamic Security: Static rules (like UFW limit) are easily bypassed by changing the timing of an attack. Dynamic security (Fail2Ban) is necessary to catch persistent threats.
 
-Log Analysis: Understanding the structure of /var/log/auth.log is critical for identifying unauthorized access attempts.
+- Log Analysis: Understanding the structure of /var/log/auth.log is critical for identifying unauthorized access attempts.
 
-The Power of Whitelisting: In a production environment, it is vital to whitelist administrative IPs to avoid self-lockout during testing.
+- The Power of Whitelisting: In a production environment, it is vital to whitelist administrative IPs to avoid self-lockout during testing.
 
 # 🛑Disclaimer!
 This project was conducted in a controlled lab environment for educational purposes only!.
